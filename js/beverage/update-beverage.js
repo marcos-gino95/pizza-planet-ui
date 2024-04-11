@@ -32,11 +32,11 @@ function putBeverage(beverage) {
 let beverageForm = $("#beverage-form");
 beverageForm.submit((event) => {
   let beverage = getBeverageData();
-  putIngredient(beverage);
+  putBeverage(beverage);
 
   event.preventDefault();
   event.currentTarget.reset();
-  window.location.href = "/app/beverage/beverages.html";
+  window.location.href = "/app/beverages/beverage.html";
 });
 
 /**

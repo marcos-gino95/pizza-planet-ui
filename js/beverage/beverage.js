@@ -6,7 +6,7 @@ fetch("http://127.0.0.1:5000/beverage")
     table.append(rows);
   });
 
-function createBeverageTemplate(ingredient) {
+function createBeverageTemplate(beverage) {
   let template = $("#beverage-item-template")[0].innerHTML;
-  return Mustache.render(template, ingredient);
+  return Mustache.render(template, beverage);
 }

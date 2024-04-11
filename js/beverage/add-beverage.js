@@ -1,7 +1,8 @@
 function postBeverage(beverage) {
+  console.log("hello", beverage);
   fetch("http://127.0.0.1:5000/beverage/", {
     method: "POST",
-    body: JSON.stringify(getBeverageData(beverage)),
+    body: JSON.stringify(beverage),
     headers: {
       "Content-Type": "application/json; charset=utf-8",
     },
@@ -16,7 +17,7 @@ function postBeverage(beverage) {
 let beverageForm = $("#beverage-form");
 beverageForm.submit((event) => {
   let beverage = getBeverageData();
-  postIngredient(beverage);
+  postBeverage(beverage);
 
   event.preventDefault();
   event.currentTarget.reset();
@@ -36,7 +37,7 @@ function getBeverageData() {
  * Shows a notification when the order is accepted
  */
 function showNotification() {
-  let beverageAlert = $("#ingredient-alert");
+  let beverageAlert = $("#beverage-alert");
   beverageAlert.toggle();
   setTimeout(() => beverageAlert.toggle(), 5000);
 }
